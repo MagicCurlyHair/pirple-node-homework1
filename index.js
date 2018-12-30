@@ -11,9 +11,9 @@ server.listen(3000, () => {
 function handleRequests(req, res) {
   const method = req.method.toUpperCase();
   const trimmedPath = req.url.replace(/^\/+|\/+$/g, '');
-  const chosenHandler = routes.hasOwnProperty(trimmedPath) ?
-  routes[trimmedPath]:
-  handlers.notFound;
+  const chosenHandler = routes.hasOwnProperty(trimmedPath)
+  ? routes[trimmedPath]
+  : handlers.notFound;
   const data = {
     method
   };
